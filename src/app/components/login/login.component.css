@@ -1,0 +1,25 @@
+.main-div {
+    padding: 0px;
+}
+
+.form-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bg {
+    background: url(../../../assets/images/1282794.jpg);
+    background-size: cover;
+}
+
+.size {
+    font-size: 35px;
+    text-align: center;
+}
+
+.form-container {
+    border: 0px solid #fff;
+    padding: 30px 40px;
+    -webkit-box-shadow: 0px 0px 12px 10px rgba(204,244,255,0.96); 
+    box-shadow: 0px 0px 12px 10px rgba(204,244,255,0.96);
+}

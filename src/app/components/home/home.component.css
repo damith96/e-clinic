@@ -1,0 +1,43 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.toolbar {
+    background-color: rgb(11, 11, 12);
+    min-height: 64px;
+}
+
+.icon {
+    color: #ffffff;
+}
+
+.route {
+    color: #ffffff;
+    margin-left: 10px; 
+}
+
+.spacer {
+    flex: 1 1 auto; 
+}
+
+.photo {
+    width: 40px;
+    height: 40px;
+    background-image: url(../../../assets/images/profile.png);
+    background-size: cover;
+    display: block;
+    border-radius: 40px;
+    margin-right: 12px;
+       
+}
+
+.text {
+    color: rgb(248, 249, 250);
+    font-size: medium;
+}
+      
+::ng-deep.cdk-overlay-pane{
+    margin-left: 85px;
+}

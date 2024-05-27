@@ -1,0 +1,53 @@
+<div fxLayout="column">
+    <h1 style="font-weight: 500; margin-top: 10px;">Channel Doctor</h1>
+    <div class="photo"></div>
+    <h3 style="font-weight: bold;">{{doctorName}}</h3>
+    <h5>{{hospital}}</h5>
+    <h5>{{field}}</h5>
+
+    <div>
+        <mat-card style="margin-bottom: 10px;">
+            <div fxLayout="column" class="container conBlock col-12" style="padding-bottom: 10px;"
+                *ngFor="let day of days; let i = index">
+                <h5 style="font-weight: bold; margin-top: 8px;margin-bottom: 8px;">{{day.day}}</h5>
+                <hr style="margin-top: 0px;margin-bottom: 0px;">
+                <h5 style="margin-top: 8px;margin-bottom: 10px;color: rgb(123, 233, 13);">AVAILABLE</h5>
+                <hr style="margin-top: 0px;margin-bottom: 0px;">
+                <h5 style="margin-top: 8px;margin-bottom: 8px;">{{day.time}}</h5>
+                <hr style="margin-top: 0px;margin-bottom: 10px;">
+                <button mat-flat-button color="warn" class="col-2 col-md-4 col-lg-2" (click)="onClick(i)">Book
+                    Now</button>
+            </div>
+        </mat-card>
+    </div>
+
+</div>
+
+
+
+<!-- <div fxLayout="column" *ngIf="!isShown">
+    <h1 style="font-weight: 500; margin-top: 10px;">Channel Doctor</h1>
+    <div class="photo"></div>
+    <h3 style="font-weight: bold;">{{doctorName}}</h3>
+    <h5>{{hospital}}</h5>
+    <h5>{{field}}</h5>
+    
+    <div>
+        <mat-card style="margin-bottom: 10px;">
+            <div fxLayout="column" class="container conBlock col-12" style="padding-bottom: 10px;" *ngFor="let day of days">
+                <h5 style="font-weight: bold; margin-top: 8px;margin-bottom: 8px;">{{day.day}}</h5>
+                <hr style="margin-top: 0px;margin-bottom: 0px;">
+                <h5 style="margin-top: 8px;margin-bottom: 10px;color: rgb(123, 233, 13);">AVAILABLE</h5>
+                <hr style="margin-top: 0px;margin-bottom: 0px;">
+                <h5 style="margin-top: 8px;margin-bottom: 8px;">{{day.time}}</h5>
+                <hr style="margin-top: 0px;margin-bottom: 10px;">
+                <button mat-flat-button color="warn" class="col-2 col-md-4 col-lg-2" (click)="onClick(day)">Book Now</button>
+            </div>
+        </mat-card>
+    </div>
+
+</div> -->
+
+<!-- <div *ngIf="isShown" class="container col-12" style="background-color: rgb(97, 196, 241);padding-bottom: 10px;">
+    <app-channel-details></app-channel-details>
+</div> -->

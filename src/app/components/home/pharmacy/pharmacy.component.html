@@ -1,0 +1,144 @@
+<div style="height: 600px">
+    <div class="bg">
+        <p style="font-size: xx-large; color: white;font-weight: 400; font-family: initial;" @fade>Upload your
+            Prescription </p>
+    </div>
+
+    <div class="container">
+        <div class="col-11 mx-auto" style="margin-top: 20px;">
+            <mat-card>
+                <h4 style="font-weight: 300;">Please fill the following details & upload the prescription.</h4>
+                <vo-ui-osm-view [showDebugInfo]="false" [showControlsZoom]="true" [showControlsCurrentLocation]="true"
+                    (addressChanged)="onAddressChange($event)">
+                </vo-ui-osm-view>
+
+                <form fxLayout="column" [formGroup]="pharmacyForm" (ngSubmit)="onSubmit()">
+                    <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom"
+                        (mapClick)="onChoseLocation($event)">
+                        <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"></agm-marker>
+                    </agm-map> -->
+
+                    <div align="center" style="background-color: rgb(218, 216, 216);margin-top: 20px;margin-left: 30px;margin-right: 30px;">
+                        <h4 style="color: rgb(100, 99, 99); margin-top: 10px;">Pharmacy Location</h4>
+                        <div class="col-5">
+                            <mat-form-field appearance="outline" class="col-12">
+                                <input [ngModel]="location" matInput placeholder="Select from the map *" formControlName="location" readonly>
+                                <mat-error>You must select location.</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="row" style="margin-top: 20px;margin-left: 30px;margin-right: 30px;">
+                        <div class="col-5">
+                            <mat-form-field appearance="outline" class="col-12">
+                                <input matInput placeholder="Your Name *" formControlName="name">
+                                <mat-error>You must enter your name.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-5">
+                            <mat-form-field appearance="outline" class="col-12">
+                                <input matInput placeholder="Your E-mail *" formControlName="email">
+                                <!-- <mat-error *ngIf="f.email.errors?.required">You must enter your e-mail.</mat-error>
+                                <mat-error *ngIf="f.email.errors?.pattern">Email address is invalid.</mat-error> -->
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row" style="margin-left: 30px;margin-right: 30px;">
+                        <div class="col-5">
+                            <mat-form-field appearance="outline" class="col-12">
+                                <input matInput placeholder="Patient's Name(if differs from your name)"
+                                    formControlName="patientName">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-5">
+                            <mat-form-field appearance="outline" class="col-12">
+                                <input matInput placeholder="Age *" formControlName="age">
+                                <mat-error>You must enter your age.</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row" style="margin-left: 30px;margin-right: 30px;">
+                        <div class="col-5">
+                            <mat-form-field appearance="outline" class="col-12">
+                                <input matInput placeholder="Your Phone *" formControlName="phoneNo">
+                                <mat-error>You must enter your phone no.</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-5">
+                            <mat-form-field appearance="outline" class="col-12">
+                                <input matInput placeholder="Your WhatsApp Number (Optional) "
+                                    formControlName="whatsappNo">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row" style="margin-left: 30px;margin-right: 30px;">
+                        <div class="col-5">
+                            <mat-form-field appearance="outline" class="col-12">
+                                <input matInput placeholder="Address *" formControlName="address">
+                                <mat-error>You must enter your address</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <!-- Radio Buttons -->
+                    <div fxLayout="row" style="margin-left: 30px;margin-right: 30px;">
+                        <div class="col-5">
+                            <h4 style="font-weight: bold;margin-bottom: 2px;">What's your gender</h4>
+                            <mat-radio-group aria-label="Select an option" formControlName="gender" class="col-12">
+                                <mat-radio-button value="1">Male</mat-radio-button>
+                                <mat-radio-button value="0">Female</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="col-2"></div>
+                        <div class="col-5">
+                            <h4 style="font-weight: bold;margin-bottom: 2px;">Are you preferred substitute</h4>
+                            <mat-radio-group aria-label="Select an option" formControlName="substitute" class="col-12">
+                                <mat-radio-button value="1">Yes</mat-radio-button>
+                                <mat-radio-button value="0">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+
+                    <div style="margin-left: 30px;margin-right: 30px;margin-top: 15px;">
+                        <h4 style="font-weight: bold;margin-bottom: 2px;">Do you have an allergy</h4>
+                        <mat-radio-group aria-label="Select an option" formControlName="allergy">
+                            <mat-radio-button value="1">Yes</mat-radio-button>
+                            <mat-radio-button value="0">No</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <div style="margin-left: 30px;margin-right: 30px;margin-top: 10px;">
+                        <mat-form-field appearance="outline" class="col-10">
+                            <textarea matInput placeholder="If allergic please specify" formControlName="allergicNote"
+                                rows="1"></textarea>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Choose File -->
+                    <div style="margin-left: 30px;margin-right: 30px;">
+                        <h4 style="font-weight: bold">Attach your Doctor's Prescription</h4>
+                        <!-- <angular-file-uploader [config]="afuConfig"></angular-file-uploader> -->
+                        <input type="file" hidden #filePicker formControlName="prescription">
+                        <button mat-stroked-button (click)="filePicker.click()" type="button">Select File</button>
+                    </div>
+
+                    <div style="margin-left: 30px;margin-right: 30px;margin-top: 10px;">
+                        <mat-form-field appearance="outline" class="col-10">
+                            <textarea matInput placeholder="Comment" formControlName="comment" rows="4"></textarea>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="text-center">
+                        <button mat-raised-button type="submit" class="col-4 submit">Submit</button>
+                    </div>
+                </form>
+            </mat-card>
+        </div>
+
+    </div>
+</div>

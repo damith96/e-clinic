@@ -1,0 +1,38 @@
+table {
+    width: 100%;
+}
+
+.bg {
+    background: url(../../../assets/images/pharmacy.jpg);
+    width: 100%;
+    height: 80px;
+    background-size: cover;
+    padding: 30px; 
+    margin-bottom: 20px;
+}
+
+.mat-column-date {
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+}
+
+.mat-column-time {
+    border-right: 1px solid currentColor;
+    text-align: center;
+}
+
+.mat-column-room_number {
+    border-right: 1px solid currentColor;
+    text-align: center;
+}
+
+.mat-column-consultant {
+    border-right: 1px solid currentColor;
+    text-align: center;
+}
+
+.mat-column-telephone {
+    border-right: 1px solid currentColor;
+    text-align: center;
+}

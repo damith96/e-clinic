@@ -1,0 +1,48 @@
+<div class="home">
+    <mat-toolbar class="toolbar">
+        <button mat-icon-button (click)="sidenav.toggle()" class="icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1 class="route">{{message}}</h1>
+        <span class="spacer"></span>
+        <mat-icon aria-hidden="false" [matBadge]='notifications' matBadgeColor="warn" style="color: rgb(248, 247, 245); margin-right: 50px;">
+            notifications
+        </mat-icon>
+        <button mat-button [matMenuTriggerFor]="menu">
+            <div fxLayout="row" class="d-flex align-items-center">
+                <div class="photo"></div>
+                <span class="text">Damith Dilanka</span>
+                <mat-icon class="icon">keyboard_arrow_down</mat-icon>
+            </div>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">
+                <mat-icon style="margin-right: 10px;">logout</mat-icon>
+                <span>Logout</span>
+            </button>
+            <button mat-menu-item (click)="profile()">
+                <mat-icon style="margin-right: 10px">person</mat-icon>
+                <span>Profile</span>
+            </button>
+        </mat-menu>
+
+        <!-- <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" appDropdown>
+                <a class="dropdown-toggle" role="button">Damith Dilanka <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a>Logout</a></li>
+                    <li><a>Profile</a></li>
+                </ul>
+            </li>
+        </ul> -->
+    </mat-toolbar>
+
+    <mat-sidenav-container style="flex: auto;">
+        <mat-sidenav #sidenav mode="side" opened>
+            <app-side-nav></app-side-nav>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

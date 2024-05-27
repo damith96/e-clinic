@@ -1,0 +1,41 @@
+/* :host {
+    display:block;
+    height: 100%;
+} */
+
+mat-icon {
+    opacity: 0.4;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-size: 50px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.card1 {
+    background: rgb(4, 115, 167);
+    background: linear-gradient(90deg, rgb(4, 115, 167) 0, rgb(99, 178, 214) 100%);
+    height: 120px;
+    color: #ffff;
+}
+
+.card2 {
+    background: rgb(40, 165, 71);
+    background: linear-gradient(90deg, rgb(40, 165, 71) 0, rgb(112, 187, 131) 100%);
+    height: 120px;
+    color: #ffff;
+}
+
+.card3 {
+    background: rgb(199, 152, 23);
+    background: linear-gradient(90deg, rgb(199, 152, 23) 0, rgb(223, 200, 139) 100%);
+    height: 120px;
+    color: #ffff;
+}
+
+.card4 {
+    background: rgb(228, 28, 88);
+    background: linear-gradient(90deg, rgb(228, 28, 88) 0, rgb(226, 121, 152) 100%);
+    height: 120px;
+    color: #ffff;
+}

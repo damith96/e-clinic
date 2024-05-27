@@ -1,0 +1,18 @@
+<div>
+    <mat-card>
+        <div fxLayout="column" class="container conBlock col-md-12 col-lg-11" style="padding-bottom: 10px;" *ngFor="let doctor of doctors; let i = index">
+            <div fxLayout="row">
+                <div class="photo col-3" style="margin-top: 30px; text-align: start"></div>
+                <div fxLayout="column" class="container col-9" style="margin-top: 10px;margin-right: 10px;">
+                    <h3 style="font-weight: bold;">{{doctor.doctorName}}</h3>
+                    <h4>{{doctor.field}}</h4>
+                    <h5>{{doctor.hospital}}</h5>
+                </div>
+            </div>
+            <br>
+            <button mat-flat-button color="warn" class="col-4 col-lg-3 col-md-3" (click)=onClick(i+1)>Book Now</button>
+            <!-- <a [routerLink]="['/appointment',i]">Book Now</a> -->
+            <!-- Use relative path(routerLink="appointment)" which will be append to the active route -->
+        </div>
+    </mat-card>
+</div>
