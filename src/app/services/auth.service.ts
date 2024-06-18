@@ -60,6 +60,37 @@ export class AuthService {
     this.router.navigateByUrl('/login');
   }
 
+  private saveAuthData(token: string, id: string, expirationDate: Date) {
+    localStorage.setItem('token', token);
+    localStorage.setItem('id', id);
+    localStorage.setItem('expiration',expirationDate.toISOString());
+  }
+
+  private clearAuthData() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    localStorage.removeItem("expiration");
+    localStorage.removeItem("route");
+  }
+
+  private getAuthData(): any{
+    const token = localStorage.getItem('token');
+    const expirationDate = localStorage.getItem('expiration');
+    if(!token || !expirationDate){
+      return;
+    }
+    return{
+      token: token,
+      expirationDate: new Date(expirationDate)
+    }
+  }
+
+  private setAuthTimer(duration: number){
+    this.tokenTimer = setTimeout(() => {
+      this.logout();
+    }, duration * 1000);
+  }
+
   reservation(data: any): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.put(baseUrl + "/reserve",data);
@@ -108,35 +139,5 @@ export class AuthService {
       baseUrl + '/appointment/' + doctorId + '/' + "30-09-2021",
       { patientNo: no }
     );
-  }
-
-  private saveAuthData(token: string, id: string, expirationDate: Date) {
-    localStorage.setItem('token', token);
-    localStorage.setItem('id', id);
-    localStorage.setItem('expiration',expirationDate.toISOString());
-  }
-
-  private clearAuthData() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("id");
-    localStorage.removeItem("expiration");
-  }
-
-  private getAuthData(): any{
-    const token = localStorage.getItem('token');
-    const expirationDate = localStorage.getItem('expiration');
-    if(!token || !expirationDate){
-      return;
-    }
-    return{
-      token: token,
-      expirationDate: new Date(expirationDate)
-    }
-  }
-
-  private setAuthTimer(duration: number){
-    this.tokenTimer = setTimeout(() => {
-      this.logout();
-    }, duration * 1000);
   }
 }

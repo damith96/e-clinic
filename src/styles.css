@@ -21,3 +21,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: chocolate !important;
     margin-left: 14px !important;
 }
+
+.bg {
+    display: flex;
+    align-items: center;
+    background: url(@images/pharmacy.jpg);
+    width: 100%;
+    min-height: 80px;
+    background-size: cover;
+    padding: 0 30px; 
+}
+
+.bg p{
+    font-size: xx-large; 
+    color: white;
+    font-weight: 400; 
+    font-family: initial;
+    margin: 0;
+} 

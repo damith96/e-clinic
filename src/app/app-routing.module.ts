@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppointmentComponent } from './components/home/appointment/appointment.component';
 import { DoctorsComponent } from './components/home/appointment/doctors/doctors.component';
-import { CardComponent } from './components/card/card.component';
+import { ScheduleComponent } from './components/home/schedule/schedule.component';
 import { ChannelComponent } from './components/home/appointment/channel/channel.component';
 import { DashboardComponent } from './components/home/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
@@ -27,7 +27,7 @@ const routes: Routes = [ // routes order is very important
           { path: ':doctorIndex/:dayIndex', component: ChannelDetailsComponent }
         ], canActivate: [AuthGuard]
       },
-      { path: 'schedule', component: CardComponent, canActivate: [AuthGuard] },
+      { path: 'schedule', component: ScheduleComponent, canActivate: [AuthGuard] },
       { path: 'pharmacy', component: PharmacyComponent, canActivate: [AuthGuard] },
       { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
     ], canActivate: [AuthGuard]

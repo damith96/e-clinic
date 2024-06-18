@@ -1,6 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../../services/auth.service';
 
 export interface PeriodicElement {
   name: string;
@@ -26,19 +26,19 @@ export interface PeriodicElement {
 
 @Component({
   selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
+  templateUrl: './schedule.component.html',
+  styleUrls: ['./schedule.component.css'],
   animations: [
     trigger('fade', [             //inside trigger we often have state and transition function calls
       transition('void => *', [   //goes void state to default state
-        style({opacity:0, marginTop:20}),
+        style({opacity:0, marginTop:50}),
         animate(1000),
       ])
     ])
   ]
 })
 
-export class CardComponent {
+export class ScheduleComponent {
 
   displayedColumns: string[] = ['date', 'time', 'room_number', 'consultant','telephone'];
   dataSource: any[] = [];

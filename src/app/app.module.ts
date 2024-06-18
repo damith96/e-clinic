@@ -19,6 +19,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio'; 
 
 //Third Party Modules
@@ -35,7 +36,7 @@ import { DashboardComponent } from './components/home/dashboard/dashboard.compon
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { ReserveComponent } from './components/home/reserve/reserve.component';
 import { AppointmentComponent } from './components/home/appointment/appointment.component';
-import { CardComponent } from './components/card/card.component';
+import { ScheduleComponent } from './components/home/schedule/schedule.component';
 import { PharmacyComponent } from './components/home/pharmacy/pharmacy.component';
 import { ProfileComponent } from './components/home/profile/profile.component';
 import { ChannelComponent } from './components/home/appointment/channel/channel.component';
@@ -45,6 +46,7 @@ import { DoctorsComponent } from './components/home/appointment/doctors/doctors.
 import { HomeComponent } from './components/home/home.component';
 import { OsmViewComponent } from './components/osm-view/osm-view.component';
 
+//Interceptors
 import { HeaderInterceptor } from './interceptors/header.interceptor';
 
 @NgModule({
@@ -55,7 +57,7 @@ import { HeaderInterceptor } from './interceptors/header.interceptor';
     SideNavComponent,
     ReserveComponent,
     AppointmentComponent,
-    CardComponent,
+    ScheduleComponent,
     PharmacyComponent,
     ProfileComponent,
     ChannelComponent,
@@ -89,6 +91,7 @@ import { HeaderInterceptor } from './interceptors/header.interceptor';
     MatTableModule,
     MatMenuModule,
     MatRadioModule,
+    MatSelectModule
     //AgmCoreModule.forRoot({
       //apiKey:'AIzaSyCLJL6LzLlAwwiqt1ctMh5ZE9uhM10wzt4'
     //}),

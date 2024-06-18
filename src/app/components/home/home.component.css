@@ -25,7 +25,7 @@
 .photo {
     width: 40px;
     height: 40px;
-    background-image: url(../../../assets/images/profile.png);
+    background-image: url(@images/profile.png);
     background-size: cover;
     display: block;
     border-radius: 40px;
@@ -39,5 +39,6 @@
 }
       
 ::ng-deep.cdk-overlay-pane{
+    margin-top: 3px;
     margin-left: 85px;
 }

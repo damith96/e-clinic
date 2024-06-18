@@ -5,6 +5,11 @@ import { Router } from '@angular/router';
 //import { Color, BaseChartDirective, Label } from 'ng2-charts';
 import { AuthService } from '../../../services/auth.service';
 
+interface Card{
+  card_name: string;
+  no_of_times:number;
+  icon_name:string;
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -27,7 +32,13 @@ export class DashboardComponent implements OnInit {
   surgaries = 0;
   leftEye: number[] = [];
   rightEye: number[] = [];
-
+  cards: Card[] = [
+    {card_name:"Clinic days",no_of_times:4,icon_name:"calendar_today"},
+    {card_name:"Appointments",no_of_times:1,icon_name:"control_point"},
+    {card_name:"Medicines",no_of_times:5,icon_name:"medical_services"},
+    {card_name:"Surgaries",no_of_times:0,icon_name:"local_hospital"},
+  ];
+  
   // public barChartOptions: ChartOptions = {
   //   responsive: true,
   //   // We use these empty structures as placeholders for dynamic theming.

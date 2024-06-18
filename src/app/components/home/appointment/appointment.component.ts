@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   animations: [
     trigger('fade', [             //inside trigger we often have state and transition function calls
       transition('void => *', [   //goes void state to default state
-        style({opacity:0, marginTop:20}),
+        style({opacity:0, marginTop:50}),
         animate(1000),
       ])
     ])

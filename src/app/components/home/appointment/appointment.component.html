@@ -1,8 +1,12 @@
-<div style="height: 100%">
+<div class="h-100 d-flex flex-column">
     <div class="bg">
-        <p style="font-size: xx-large; color: white;font-weight: 400; font-family: initial;" @fade>Channeling </p>
+        <p @fade>Channeling </p>
     </div>
-    <div class="container col-md-10 col-lg-8"style="background-color: rgb(216, 239, 250);padding-top: 10px;margin-top: 40px;padding-bottom:10px">
-        <router-outlet></router-outlet>
+    <div class="flex-fill overflow-y-scroll">
+        <div class="col-lg-9 col-md-11 m-auto my-3 p-3" style="background-color: rgb(216, 239, 250);">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
+
+<!-- rgb(216, 239, 250) col-md-10 col-lg-8-->

@@ -2,15 +2,6 @@ table {
     width: 100%;
 }
 
-.bg {
-    background: url(../../../assets/images/pharmacy.jpg);
-    width: 100%;
-    height: 80px;
-    background-size: cover;
-    padding: 30px; 
-    margin-bottom: 20px;
-}
-
 .mat-column-date {
     border-right: 1px solid currentColor;
     padding-right: 24px;

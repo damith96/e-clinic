@@ -18,7 +18,7 @@ export class LoginComponent{
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  loginProcess(){
+  login(){
     if(this.formGroup.valid){
       this.authService.login(this.formGroup.value);
     }

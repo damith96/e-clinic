@@ -1,6 +1,5 @@
-import { overrides } from 'chart.js/dist/core/core.defaults';
 import { AuthService } from './services/auth.service';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
